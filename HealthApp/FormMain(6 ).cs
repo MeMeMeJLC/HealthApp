@@ -202,7 +202,7 @@ namespace HealthApp
                 string city = txtBoxCity.Text;
                 HttpClient client = new HttpClient();
                 Weather_Demo.Weather_Object.RootObject rootObject;
-                string x = await client.GetStringAsync(new Uri("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&APPID=440e3d0ee33a977c5e2fff6bc12448ee"));
+                string x = await client.GetStringAsync(new Uri("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&APPID=ae0b14522107e76a919560f8b1c08833"));
                 rootObject = JsonConvert.DeserializeObject<Weather_Demo.Weather_Object.RootObject>(x);
                 double currentTemp = rootObject.main.temp;
                 command.Parameters.AddWithValue("@temp", currentTemp);
