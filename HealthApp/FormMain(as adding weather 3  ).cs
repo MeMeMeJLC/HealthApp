@@ -87,50 +87,9 @@ namespace HealthApp
             }
         }
 
-       /* private void PopulateTemp()
-        {
-            string query = "select temp from EnvironmentalFactor " +
-                "where b.envirFactorID = @envirID"; //taking in a parameter @envirid
-
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))  //handles queries with parameters
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-            {
-                command.Parameters.AddWithValue("@envirID", listBoxDates.SelectedValue);
-
-                DataTable txtBoxTemp = new DataTable();
-                try
-                {
-                    adapter.Fill(txtBoxTemp);
-                }
-                catch (SqlException e)
-                {
-                    StringBuilder errorMessages = new StringBuilder();
-
-                    for (int i = 0; i < e.Errors.Count; i++)
-                    {
-                        errorMessages.Append("Index #" + i + "\n" +
-                            "Message: " + e.Errors[i].Message + "\n" +
-                            "LineNumber: " + e.Errors[i].LineNumber + "\n" +
-                            "Source: " + e.Errors[i].Source + "\n" +
-                            "Procedure: " + e.Errors[i].Procedure + "\n");
-                    }
-                    Console.WriteLine(errorMessages.ToString());
-
-                }
-
-                listBoxDateSymptoms.DisplayMember = "temp";
-                listBoxDateSymptoms.ValueMember = "envirFactorId";
-                listBoxDateSymptoms.DataSource = txtBoxTemp;
-            }
-        }*/
-
         private void listBoxHealth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //testing if listboxenvirfactors works
-            //MessageBox.Show(listBoxHealth.SelectedValue.ToString());
 
-            //PopulateTemp();
             PopulateSymptom(); //load symptoms when listboxdate changes
         }
 
@@ -165,16 +124,6 @@ namespace HealthApp
 
                 command.ExecuteNonQuery();
             }
-
-           /* string queryGetEnvID = "Select envirFactorID from EnvironmentalFactor where date = @date";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(queryGetEnvID , connection))  //handles queries with parameters
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-            {
-                connection.Open();
-                lblEnvirIDNumDisplay.Text = 
-                command.ExecuteNonQuery();
-            }*/
                 PopulateEnvironmentalFactor();
         }
 
@@ -196,15 +145,15 @@ namespace HealthApp
 
                 //command.Parameters.AddWithValue("@envirFactorID", 8);
 
-                DateTime localDate = DateTime.Now;
+                //DateTime localDate = DateTime.Now;
                 command.Parameters.AddWithValue("@problemArea", textBoxProblemArea.Text);
                 command.Parameters.AddWithValue("@symptomDesc", textBoxSymptomDescription.Text);
-                //command.Parameters.AddWithValue("@envirFactorID", textBoxSymptomDescription.Text);
+                command.Parameters.AddWithValue("@envirFactorID", listBoxDates.SelectedValue);
                 command.Parameters.AddWithValue("@symptomSeverity", int.Parse(textBoxSymptomSeverity.Text));
 
                 command.ExecuteNonQuery();
             }
-            PopulateEnvironmentalFactor();
+            PopulateSymptom();
         }
 
         private void label3_Click(object sender, EventArgs e)

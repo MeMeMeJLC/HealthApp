@@ -39,7 +39,6 @@
             this.lblCity = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblTemp = new System.Windows.Forms.Label();
             this.lblProblemArea = new System.Windows.Forms.Label();
             this.lblSymptomDescription = new System.Windows.Forms.Label();
             this.lblSymptomSeverity = new System.Windows.Forms.Label();
@@ -50,7 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblEnvirID = new System.Windows.Forms.Label();
             this.lblEnvirIDNumDisplay = new System.Windows.Forms.Label();
-            this.listBoxAllSymptoms = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -58,16 +56,16 @@
             // lblDates
             // 
             this.lblDates.AutoSize = true;
-            this.lblDates.Location = new System.Drawing.Point(12, 245);
+            this.lblDates.Location = new System.Drawing.Point(4, 127);
             this.lblDates.Name = "lblDates";
-            this.lblDates.Size = new System.Drawing.Size(35, 13);
+            this.lblDates.Size = new System.Drawing.Size(214, 13);
             this.lblDates.TabIndex = 0;
-            this.lblDates.Text = "Dates";
+            this.lblDates.Text = "Step 2 - Select Date To Add Symptoms Too";
             // 
             // listBoxDates
             // 
             this.listBoxDates.FormattingEnabled = true;
-            this.listBoxDates.Location = new System.Drawing.Point(11, 272);
+            this.listBoxDates.Location = new System.Drawing.Point(7, 143);
             this.listBoxDates.Name = "listBoxDates";
             this.listBoxDates.Size = new System.Drawing.Size(133, 95);
             this.listBoxDates.TabIndex = 1;
@@ -76,7 +74,7 @@
             // listBoxDateSymptoms
             // 
             this.listBoxDateSymptoms.FormattingEnabled = true;
-            this.listBoxDateSymptoms.Location = new System.Drawing.Point(385, 272);
+            this.listBoxDateSymptoms.Location = new System.Drawing.Point(13, 390);
             this.listBoxDateSymptoms.Name = "listBoxDateSymptoms";
             this.listBoxDateSymptoms.Size = new System.Drawing.Size(150, 95);
             this.listBoxDateSymptoms.TabIndex = 3;
@@ -84,11 +82,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(386, 245);
+            this.label1.Location = new System.Drawing.Point(12, 374);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Symptoms";
+            this.label1.Text = "Problem Area";
             // 
             // btnEnvirFactorsCreate
             // 
@@ -158,22 +156,12 @@
             this.groupBox2.Controls.Add(this.lblSymptomSeverity);
             this.groupBox2.Controls.Add(this.lblSymptomDescription);
             this.groupBox2.Controls.Add(this.lblProblemArea);
-            this.groupBox2.Location = new System.Drawing.Point(1, 130);
+            this.groupBox2.Location = new System.Drawing.Point(-1, 255);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(463, 100);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Step 2 - Input Each Symptom";
-            // 
-            // lblTemp
-            // 
-            this.lblTemp.AutoSize = true;
-            this.lblTemp.Location = new System.Drawing.Point(153, 245);
-            this.lblTemp.Name = "lblTemp";
-            this.lblTemp.Size = new System.Drawing.Size(69, 13);
-            this.lblTemp.TabIndex = 11;
-            this.lblTemp.Text = "All Symptoms";
-            this.lblTemp.Visible = false;
+            this.groupBox2.Text = "Step 3 - Input Each Symptom";
             // 
             // lblProblemArea
             // 
@@ -260,22 +248,11 @@
             this.lblEnvirIDNumDisplay.Size = new System.Drawing.Size(0, 13);
             this.lblEnvirIDNumDisplay.TabIndex = 11;
             // 
-            // listBoxAllSymptoms
-            // 
-            this.listBoxAllSymptoms.FormattingEnabled = true;
-            this.listBoxAllSymptoms.Location = new System.Drawing.Point(156, 272);
-            this.listBoxAllSymptoms.Name = "listBoxAllSymptoms";
-            this.listBoxAllSymptoms.Size = new System.Drawing.Size(120, 95);
-            this.listBoxAllSymptoms.TabIndex = 12;
-            this.listBoxAllSymptoms.SelectedIndexChanged += new System.EventHandler(this.listBoxAllSymptoms_SelectedIndexChanged);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 469);
-            this.Controls.Add(this.listBoxAllSymptoms);
-            this.Controls.Add(this.lblTemp);
+            this.ClientSize = new System.Drawing.Size(703, 526);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblOverallHealthNum);
             this.Controls.Add(this.txtBxOverallHealthNum);
@@ -309,7 +286,6 @@
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label lblTemp;
         private System.Windows.Forms.Button btnCreateSymptom;
         private System.Windows.Forms.TextBox textBoxSymptomSeverity;
         private System.Windows.Forms.TextBox textBoxSymptomDescription;
@@ -320,7 +296,6 @@
         private System.Windows.Forms.Label lblEnvirID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblEnvirIDNumDisplay;
-        private System.Windows.Forms.ListBox listBoxAllSymptoms;
     }
 }
 
